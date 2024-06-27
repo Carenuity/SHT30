@@ -3,14 +3,14 @@
 #include <Adafruit_SSD1306.h>
 #include <WEMOS_SHT3X.h>
 
-#define OLED_RESET 7  // GPIO0
+#define OLED_RESET 4  // GPIO0
 Adafruit_SSD1306 display(OLED_RESET);
 
 SHT3X sht30(0x45);
 
 void setup() {
   Serial.begin(115200);
-Wire.begin(8,10);
+Wire.begin();
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
  display.display();
 }
